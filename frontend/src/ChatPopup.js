@@ -22,11 +22,11 @@ export default function ChatPopup({ onOpenChat }) {
     setMessages((msgs) => [...msgs, userMsg]);
     setInput("");
     try {
-      const res = await fetch("/api/gemini-chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input })
-      });
+      const res = await fetch("https://aurea-main.onrender.com/api/gemini-chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message: input })
+})
       const data = await res.json();
       let reply = data.reply || "Sorry, I couldn't get a response.";
       setMessages((msgs) => [...msgs, { sender: "llm", text: reply }]);
