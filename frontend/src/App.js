@@ -86,7 +86,7 @@ const TryPage = () => {
     formData.append('file', selectedFiles[0]);
     if (simulateType) formData.append('simulateType', simulateType);
     try {
-      const response = await fetch('/api/image', {
+      const response = await fetch('https://aurea-main.onrender.com/api/image', {
         method: 'POST',
         body: formData,
       });
