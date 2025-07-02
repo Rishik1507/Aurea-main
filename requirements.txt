@@ -5,3 +5,4 @@ requests
 pillow
 google-generativeai
 numpy
+python-multipart
